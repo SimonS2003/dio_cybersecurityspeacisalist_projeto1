@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Demo - Laboratório de Segurança</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            color: #243044;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 390px;
+            padding: 30px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            background: #fff0cc;
+            color: #805500;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            font-size: 26px;
+        }
+
+        .description {
+            color: #64748b;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #resultado {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 7px;
+            background: #e8f7ed;
+            color: #166534;
+            line-height: 1.5;
+        }
+
+        .aviso {
+            margin-top: 22px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <span class="tag">LABORATÓRIO EDUCATIVO</span>
+
+        <h1>Facebook</h1>
+
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+            alt="Logo do Facebook"
+            width="120"
+        >
+
+        <form id="formulario">
+            <label for="email">E-mail fictício</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="voce@example.com"
+                autocomplete="off"
+                required
+            >
+
+            <label for="senha">Senha de demonstração</label>
+            <input
+                type="password"
+                id="senha"
+                placeholder="Use uma senha inventada"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">Testar formulário</button>
+        </form>
+
+        <div id="resultado" role="status" hidden>
+            Formulário testado! Nenhum dado foi armazenado
+            ou enviado. Em situações reais, verifique sempre
+            o domínio antes de inserir suas credenciais.
+        </div>
+
+        <p class="aviso">
+            Página fictícia para estudo. Não pertence a nenhuma
+            rede social ou serviço real.
+        </p>
+    </main>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const resultado = document.getElementById("resultado");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            // Não lemos, armazenamos nem enviamos os campos.
+            resultado.hidden = false;
+        });
+    </script>
+</body>
+</html>
